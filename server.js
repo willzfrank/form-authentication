@@ -13,7 +13,7 @@ app.set("view engine ", "ejs");
 
 // database connection
 mongooseAddress =
-  "mongodb+srv://tutorialClusters:tutorialClusters1234567890@tutorialclusters.nvehq.mongodb.net/";
+  "mongodb+srv://node-authentication:test1234@cluster0.nvehq.mongodb.net/node-auth";
 
 mongoose
   .connect(mongooseAddress, {
@@ -21,7 +21,9 @@ mongoose
     useUnifiedTopology: true,
     // useCreateIndex: true,
   })
-  .then((result) => app.listen(5000))
+  .then((result) =>
+    app.listen(5000, () => console.log("listening in port 5000"))
+  )
   .catch((err) => console.log(err));
 
 // routes
